@@ -28,4 +28,8 @@ router.get("*", (req, res) => {
     res.status(404).send({ error: "Not Found" });
 });
 
+router.post("*", (req, res) => {
+    res.status(404).send({ error: "Not Found" });
+});
+
 module.exports = router;
