@@ -1,3 +1,4 @@
+const geolocalModel = require("../models/geolocal.model")
 const { handleError } = require("../utils/handler")
 
 const _receptorController = async (req, res) => {
@@ -12,6 +13,16 @@ const _receptorController = async (req, res) => {
         const timestamp = fechaHoraActual.getTime()
         console.log(fechaHoraActual)
         console.log(timestamp)
+
+        datos.fecha = fechaHoraActual
+        datos.timestamp = timestamp
+
+        console.log(datos)
+
+        const result = await geolocalModel.create(datos)
+
+        console.log(result)
+
         res.status(200).send({ error: "SIN_ERROR", desc: "Datos Recibidos" })
     } catch (error) {
         handleError(res, "receptorC", error)
