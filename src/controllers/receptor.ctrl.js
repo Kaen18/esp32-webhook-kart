@@ -15,7 +15,7 @@ const _receptorController = async (req, res) => {
         console.log(timestamp)
 
         datos.fecha = fechaHoraActual
-        datos.timestamp = timestamp
+        datos.fechaTS = timestamp
 
         console.log(datos)
 
